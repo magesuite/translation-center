@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Translation Center for Magento 2
+ *
+ * @author    Marek Zabrowarny <marek.zabrowarny@creativestyle.pl>
+ * @copyright 2016 - 2017 creativestyle
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="MageSuite\TranslationCenter\Service\ConfigInterface" type="MageSuite\TranslationCenter\Service\Config"/>
+    <preference for="MageSuite\TranslationCenter\Service\LanguagePackage\GeneratorInterface" type="MageSuite\TranslationCenter\Service\LanguagePackage\Generator"/>
+    <preference for="MageSuite\TranslationCenter\Service\LanguagePackage\LocatorInterface" type="MageSuite\TranslationCenter\Service\LanguagePackage\Locator"/>
+    <preference for="MageSuite\TranslationCenter\Service\Translation\AggregatorInterface" type="MageSuite\TranslationCenter\Service\Translation\Aggregator"/>
+    <preference for="MageSuite\TranslationCenter\Service\Translation\StorageInterface" type="MageSuite\TranslationCenter\Service\Translation\Storage\Proxy"/>
+    <preference for="MageSuite\TranslationCenter\Service\Translation\ImporterInterface" type="MageSuite\TranslationCenter\Service\Translation\Importer"/>
+    <preference for="MageSuite\TranslationCenter\Service\Translation\MetadataProviderInterface" type="MageSuite\TranslationCenter\Service\Translation\MetadataProvider"/>
+    <preference for="MageSuite\TranslationCenter\Service\Translation\Storage\CacheCompositeInterface" type="MageSuite\TranslationCenter\Service\Translation\Storage\CacheComposite"/>
+    <preference for="MageSuite\TranslationCenter\Service\Translation\Storage\SynchroniseStrategyInterface" type="MageSuite\TranslationCenter\Service\Translation\Storage\SynchroniseStrategy"/>
+    <preference for="MageSuite\TranslationCenter\Service\Translation\Storage\GoogleSheets\ConfigInterface" type="MageSuite\TranslationCenter\Service\Translation\Storage\GoogleSheets\Config"/>
+    <preference for="MageSuite\TranslationCenter\Service\Translation\Storage\GoogleSheets\CredentialsProviderInterface" type="MageSuite\TranslationCenter\Service\Translation\Storage\GoogleSheets\CredentialsProvider"/>
+    <preference for="MageSuite\TranslationCenter\Service\Translation\Storage\GoogleSheets\SpreadsheetsListInterface" type="MageSuite\TranslationCenter\Service\Translation\Storage\GoogleSheets\SpreadsheetsList"/>
+    <type name="MageSuite\TranslationCenter\Model\System\Config\Source\StorageTypes">
+        <arguments>
+            <argument name="storageTypes" xsi:type="array">
+                <item name="MageSuite\TranslationCenter\Service\Translation\Storage\Csv" xsi:type="string">CSV</item>
+                <item name="MageSuite\TranslationCenter\Service\Translation\Storage\GoogleSheets" xsi:type="string">Google Sheets</item>
+                <item name="MageSuite\TranslationCenter\Service\Translation\Storage\MagentoCache" xsi:type="string">Magento Cache</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Framework\Console\CommandListInterface">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="import_phrases" xsi:type="object">MageSuite\TranslationCenter\Console\Command\ImportPhrasesCommand</item>
+                <item name="create_language_package" xsi:type="object">MageSuite\TranslationCenter\Console\Command\CreateLanguagePackageCommand</item>
+            </argument>
+        </arguments>
+    </type>
+    <!-- Mapping external classes instantiated by Object Manager to virtual types -->
+    <virtualType name="googleClient" type="Google_Client">
+        <arguments>
+            <argument name="config" xsi:type="array"/>
+        </arguments>
+    </virtualType>
+    <virtualType name="googleServiceDrive" type="Google_Service_Drive">
+        <arguments>
+            <argument name="client" xsi:type="object">googleClient</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="googleServiceSheets" type="Google_Service_Sheets">
+        <arguments>
+            <argument name="client" xsi:type="object">googleClient</argument>
+        </arguments>
+    </virtualType>
+    <type name="MageSuite\TranslationCenter\Service\Translation\Storage\GoogleSheets\Client">
+        <arguments>
+            <argument name="googleClient" xsi:type="object">googleClient</argument>
+        </arguments>
+    </type>
+    <type name="MageSuite\TranslationCenter\Service\Translation\Storage\GoogleSheets\Facade">
+        <arguments>
+            <argument name="googleSheetsService" xsi:type="object">googleServiceSheets</argument>
+        </arguments>
+    </type>
+    <type name="MageSuite\TranslationCenter\Service\Translation\Storage\GoogleSheets\SpreadsheetsList">
+        <arguments>
+            <argument name="googleDriveService" xsi:type="object">googleServiceDrive</argument>
+        </arguments>
+    </type>
+    <type name="Magento\Framework\Locale\ResolverInterface">
+        <plugin name="mage_localeresolver_reload" type="Magento\Framework\Translate\Locale\Resolver\Plugin" sortOrder="1" disabled="false"/>
+    </type>
+</config>

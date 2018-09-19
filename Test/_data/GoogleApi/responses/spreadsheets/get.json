@@ -1,0 +1,34 @@
+[
+    {
+        "hidden": null,
+        "index": 0,
+        "rightToLeft": null,
+        "sheetId": 0,
+        "sheetType": "GRID",
+        "title": "Sheet1"
+    },
+    {
+        "hidden": null,
+        "index": 1,
+        "rightToLeft": null,
+        "sheetId": 502884729,
+        "sheetType": "GRID",
+        "title": "en_US"
+    },
+    {
+        "hidden": null,
+        "index": 2,
+        "rightToLeft": null,
+        "sheetId": 1832541177,
+        "sheetType": "GRID",
+        "title": "de_DE"
+    },
+    {
+        "hidden": null,
+        "index": 3,
+        "rightToLeft": null,
+        "sheetId": 1601333093,
+        "sheetType": "GRID",
+        "title": "pl_PL"
+    }
+]

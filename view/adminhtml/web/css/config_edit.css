@@ -1,0 +1,39 @@
+.gapi-badge {
+}
+.gapi-badge__avatar {
+    width: 48px;
+    border-radius: 50%;
+    margin-right: 10px;
+    float: left;
+}
+.gapi-badge__name {
+    display: inline-block;
+    position: relative;
+    padding-top: 7px;
+    color: #009900;
+    font-size: 14px;
+    font-weight: 600;
+}
+.gapi-badge__name:before {
+    bottom: -1.3rem;
+    color: #808080;
+    content: attr(data-user-profile-email);
+    font-size: 1.1rem;
+    font-weight: 400;
+    min-width: 15rem;
+    position: absolute;
+    left: 0;
+    text-transform: lowercase;
+}
+.gapi-badge__name--emphasized {
+    color: #009900;
+}
+.gapi-badge__button-container {
+    padding-top: 7px;
+    clear: both;
+}
+.gapi-badge__button {
+    display: block;
+    float: left;
+    margin-right: 7px;
+}

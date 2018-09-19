@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Translation Center for Magento 2
+ *
+ * @author    Marek Zabrowarny <marek.zabrowarny@creativestyle.pl>
+ * @copyright 2016 - 2017 creativestyle
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <translation_center>
+            <general>
+                <interceptor_active>0</interceptor_active>
+                <locales>en_US</locales>
+                <storage_type>MageSuite\TranslationCenter\Service\Translation\Storage\Csv</storage_type>
+                <store_metadata>0</store_metadata>
+                <cache_active>0</cache_active>
+                <cache_storage_type>MageSuite\TranslationCenter\Service\Translation\Storage\MagentoCache</cache_storage_type>
+                <language_package_vendor>creativeshop</language_package_vendor>
+                <language_package_parent_vendor>creativestyle</language_package_parent_vendor>
+            </general>
+            <google_sheets>
+                <client_id>112916438927-5dnd3q6n8sn1aclifmdd9vledeh6aqrf.apps.googleusercontent.com</client_id>
+                <client_secret>cH6yZpVTZ7_s9r2hq10D-QYe</client_secret>
+            </google_sheets>
+        </translation_center>
+    </default>
+</config>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<items>
+    <item type="array">
+        <item0 type="array">
+            <text_to_translate><![CDATA[Lorem ipsum dolor sit amet]]></text_to_translate>
+            <translated_text><![CDATA[Consectetur adipiscing elit]]></translated_text>
+        </item0>
+        <item1 type="array">
+            <text_to_translate><![CDATA[Lorem ipsum %1 (%2)]]></text_to_translate>
+            <translated_text><![CDATA[%1 (%2) adipiscing elit]]></translated_text>
+        </item1>
+        <item2 type="array">
+            <text_to_translate><![CDATA[Lorem ipsum\' \ "dolor sit amet\"]]></text_to_translate>
+            <translated_text><![CDATA["Consectetur\" \ adipiscing elit\']]></translated_text>
+        </item2>
+        <item3 type="array">
+            <text_to_translate><![CDATA[Zażółć gęslą jaźń]]></text_to_translate>
+            <translated_text><![CDATA[Heizölrückstoßabdämpfung]]></translated_text>
+        </item3>
+    </item>
+</items>

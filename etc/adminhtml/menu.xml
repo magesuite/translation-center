@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Translation Center for Magento 2
+ *
+ * @author    Marek Zabrowarny <marek.zabrowarny@creativestyle.pl>
+ * @copyright 2016 creativestyle
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="MageSuite_TranslationCenter::translations" title="Translation Center" translate="title" module="MageSuite_TranslationCenter" sortOrder="20" parent="Magento_Backend::system" resource="MageSuite_TranslationCenter::translations"/>
+        <add id="MageSuite_TranslationCenter::translations_import" title="Import" translate="title" module="MageSuite_TranslationCenter" sortOrder="10" parent="MageSuite_TranslationCenter::translations" action="translation_center/import" resource="MageSuite_TranslationCenter::translations_import"/>
+        <add id="MageSuite_TranslationCenter::translations_settings" title="Settings" translate="title" module="MageSuite_TranslationCenter" sortOrder="10" parent="MageSuite_TranslationCenter::translations" action="adminhtml/system_config/edit/section/translation_center" resource="MageSuite_TranslationCenter::translations_settings"/>
+    </menu>
+</config>

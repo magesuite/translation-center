@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Translation Center for Magento 2
+ *
+ * @author    Marek Zabrowarny <marek.zabrowarny@creativestyle.pl>
+ * @copyright 2016 creativestyle
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <router id="admin">
+        <route id="translation_center" frontName="translation_center">
+            <module name="MageSuite_TranslationCenter"/>
+        </route>
+    </router>
+</config>

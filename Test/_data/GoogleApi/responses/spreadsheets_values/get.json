@@ -1,0 +1,18 @@
+[
+    [
+        "Lorem ipsum dolor sit amet",
+        "Consectetur adipiscing elit"
+    ],
+    [
+        "Lorem ipsum %1 (%2)",
+        "%1 (%2) adipiscing elit"
+    ],
+    [
+        "Lorem ipsum\\' \\ \"dolor sit amet\\\"",
+        "\"Consectetur\\\" \\ adipiscing elit\\'"
+    ],
+    [
+        "Za\u017c\u00f3\u0142\u0107 g\u0119sl\u0105 ja\u017a\u0144",
+        "Heiz\u00f6lr\u00fccksto\u00dfabd\u00e4mpfung"
+    ]
+]

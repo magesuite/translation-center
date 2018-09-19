@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Translation Center for Magento 2
+ *
+ * @author    Marek Zabrowarny <marek.zabrowarny@creativestyle.pl>
+ * @copyright 2016 creativestyle
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="translation_center" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+            <label>Translation Center</label>
+            <tab>service</tab>
+            <resource>MageSuite_TranslationCenter::translations_settings</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>General</label>
+                <field id="interceptor_active" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
+                    <label>Enable translation interceptor</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="storage_type" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
+                    <label>Translations storage</label>
+                    <source_model>MageSuite\TranslationCenter\Model\System\Config\Source\StorageTypes</source_model>
+                </field>
+                <field id="locales" translate="label" type="multiselect" sortOrder="30" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Locales to intercept</label>
+                    <source_model>Magento\Config\Model\Config\Source\Locale</source_model>
+                    <can_be_empty>1</can_be_empty>
+                </field>
+                <field id="store_metadata" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
+                    <label>Store metadata</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <group id="general_cache" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Cache</label>
+                    <fieldset_css>config-advanced</fieldset_css>
+                    <field id="cache_active" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
+                        <label>Enable interceptions caching</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                        <config_path>translation_center/general/cache_active</config_path>
+                    </field>
+                    <field id="cache_storage_type" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
+                        <label>Cache storage</label>
+                        <source_model>MageSuite\TranslationCenter\Model\System\Config\Source\StorageTypes</source_model>
+                        <config_path>translation_center/general/cache_storage_type</config_path>
+                    </field>
+                </group>
+                <group id="general_advanced" translate="label" showInDefault="1" showInWebsite="0" showInStore="0" sortOrder="900">
+                    <label>Advanced</label>
+                    <fieldset_css>config-advanced</fieldset_css>
+                    <field id="language_package_vendor" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
+                        <label>Language packages vendor name</label>
+                        <comment>The vendor name that shall be used when generating new language package</comment>
+                        <config_path>translation_center/general/language_package_vendor</config_path>
+                    </field>
+                    <field id="language_package_parent_vendor" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
+                        <label>Inherit language packages from</label>
+                        <comment>The name of the existing vendor, that one's language package shall be used as a parent for the newly generated language package</comment>
+                        <config_path>translation_center/general/language_package_parent_vendor</config_path>
+                    </field>
+                </group>
+            </group>
+            <group id="google_sheets" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Google Sheets</label>
+                <field id="link" type="hidden" sortOrder="30" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Link status</label>
+                    <frontend_model>MageSuite\TranslationCenter\Block\Adminhtml\System\Config\GoogleSheets\Link</frontend_model>
+                </field>
+                <field id="spreadsheet_id" type="select" sortOrder="100" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Spreadsheet</label>
+                    <source_model>MageSuite\TranslationCenter\Model\System\Config\Source\GoogleSheets\Spreadsheets</source_model>
+                    <depends>
+                        <field id="*/*/link">1</field>
+                    </depends>
+                </field>
+                <group id="google_sheets_advanced" translate="label" showInDefault="1" showInWebsite="0" showInStore="0" sortOrder="900">
+                    <label>Advanced</label>
+                    <fieldset_css>config-advanced</fieldset_css>
+                    <field id="client_id" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
+                        <label>Client ID</label>
+                        <config_path>translation_center/google_sheets/client_id</config_path>
+                    </field>
+                    <field id="client_secret" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
+                        <label>Client secret</label>
+                        <config_path>translation_center/google_sheets/client_secret</config_path>
+                    </field>
+                    <field id="access_token" type="text" sortOrder="900" showInDefault="1" showInWebsite="0" showInStore="0">
+                        <label>Access token</label>
+                        <config_path>translation_center/google_sheets/access_token</config_path>
+                    </field>
+                    <field id="refresh_token" type="text" sortOrder="910" showInDefault="1" showInWebsite="0" showInStore="0">
+                        <label>Refresh token</label>
+                        <config_path>translation_center/google_sheets/refresh_token</config_path>
+                    </field>
+                </group>
+            </group>
+        </section>
+    </system>
+</config>

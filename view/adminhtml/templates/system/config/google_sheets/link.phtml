@@ -1,0 +1,30 @@
+<?php /** @var \MageSuite\TranslationCenter\Block\Adminhtml\System\Config\GoogleSheets\Link $block */ ?>
+<?php if ($block->isAuthenticated()): ?>
+    <div class="gapi-badge">
+        <?php if ($block->getUserName()): ?>
+            <?php if ($block->getUserPicture()): ?>
+                <img class="gapi-badge__avatar" src="<?php echo $block->getUserPicture(); ?>?sz=48" alt=""/>
+            <?php endif; ?>
+            <span data-user-profile-email="<?php echo $block->getUserEmail(); ?>" class="gapi-badge__name"><?php echo __('Logged in as %1', $block->getUserName()); ?></span>
+        <?php elseif ($block->getUserEmail()): ?>
+            <span class="gapi-badge__name gapi-badge__name--emphasized"><?php echo __('Logged in as %1', $block->getUserEmail()); ?></span>
+        <?php else: ?>
+            <span class="gapi-badge__name gapi-badge__name--emphasized"><?php echo __('Linked with Google Account'); ?></span>
+        <?php endif; ?>
+        <div class="gapi-badge__button-container">
+            <a class="gapi-badge__button action-default" href="<?php echo $this->getUrl('translation_center/googleSheets/auth'); ?>" id="<?php echo $block->escapeHtml($block->getHtmlId()); ?>_button_link">
+                <?php echo __('Re-link'); ?>
+            </a>
+            <a class="gapi-badge__button action-default" href="<?php echo $this->getUrl('translation_center/googleSheets/unlink'); ?>" id="<?php echo $block->escapeHtml($block->getHtmlId()); ?>_button_unlink">
+                <?php echo __('Unlink'); ?>
+            </a>
+            <a class="gapi-badge__button action-default" href="<?php echo $this->getUrl('translation_center/googleSheets/unlink', ['revoke' => '1']); ?>" id="<?php echo $block->escapeHtml($block->getHtmlId()); ?>_button_unlink_and_revoke">
+                <?php echo __('Unlink & revoke token'); ?>
+            </a>
+        </div>
+    </div>
+<?php else: ?>
+    <a class="gapi-badge__button action-default" href="<?php echo $this->getUrl('translation_center/googleSheets/auth'); ?>" id="<?php echo $block->escapeHtml($block->getHtmlId()); ?>_button_link">
+        <?php echo __('Link with your Google Account'); ?>
+    </a>
+<?php endif; ?>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<items>
+    <item>http://example.com/callback</item>
+    <item>https://example.com/callback</item>
+</items>

@@ -3,7 +3,6 @@
     "description": "Translation Center extension for Magento 2",
     "type": "magento2-module",
     "require": {
-        "php": "~5.5.0|~5.6.0|~7.0.0|~7.1.0|~7.2.0",
         "google/apiclient": "^2.0",
         "mikey179/vfsStream": "^1.3"
     },

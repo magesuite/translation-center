@@ -1,0 +1,28 @@
+Import,Import
+"Import translations","Import translations"
+Locale,Locale
+"Translation Center","Translation Center"
+"-- Link with your Google Account first --","-- Link with your Google Account first --"
+"Logged in as %1","Logged in as %1"
+"Linked with Google Account","Linked with Google Account"
+Re-link,Re-link
+Unlink,Unlink
+"Unlink & revoke token","Unlink & revoke token"
+"Link with your Google Account","Link with your Google Account"
+Settings,Settings
+General,General
+"Enable translation interceptor","Enable translation interceptor"
+"Translations storage","Translations storage"
+"Locales to intercept","Locales to intercept"
+"Store metadata","Store metadata"
+Cache,Cache
+"Enable interceptions caching","Enable interceptions caching"
+"Cache storage","Cache storage"
+Advanced,Advanced
+"Language packages vendor name","Language packages vendor name"
+"The vendor name that shall be used when generating new language package","The vendor name that shall be used when generating new language package"
+"Inherit language packages from","Inherit language packages from"
+"The name of the existing vendor, that one's language package shall be used as a parent for the newly generated language package","The name of the existing vendor, that one's language package shall be used as a parent for the newly generated language package"
+"Google Sheets","Google Sheets"
+"Client ID","Client ID"
+"Client secret","Client secret"
